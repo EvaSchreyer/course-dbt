@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: important info about our greenery users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at
+      - name: updated_at
+      - name: address_id
+
+  - name: stg_promos
+    description: staging table about our promo campaigns
+    columns: 
+      - name: promo_id
+        tests: 
+          - not_null
+  
+  - name: stg_products
+    description: staging table for our greenery products
+    columns:
+      - name: product_id
+        tests: 
+          - not_null
+
+  - name: stg_orders
+    description: staging table for our greenery orders 
+    columns: 
+      - name: order_id 
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: staging table for our greenery order_items
+    columns: 
+      - name: order_id 
+        tests:
+          - not_null
+
+  - name: stg_events
+    description: staging table for our greenery events
+    columns: 
+      - name: event_id 
+        tests:
+          - not_null
+
+  - name: stg_addresses
+    description: staging table for our greenery addresses
+    columns: 
+      - name: address_id 
+        tests:
+          - not_null

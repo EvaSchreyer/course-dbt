@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+
+  - name: postgres 
+    schema: public # this is the schema our raw data lives in
+    database: raw # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: users 
+        loaded_at_field: created_at
+        description: contains info about our greenery users
+
+      - name: events
+        loaded_at_field: created_at
+        description: contains our event data
+
+      - name: products
+        loaded_at_field: product_id
+        description: table for our greenery products
+
+      - name: order_items
+        loaded_at_field: order_id
+        description: table to link our product table with the orders table 
+
+      - name: promos
+        loaded_at_field: promo_id
+        description: table for our promo activities
+
+      - name: orders 
+        loaded_at_field: created_at
+        description: table that contains our orders and everything relevant to it 
+
+      - name: addresses
+        loaded_at_field: address_id 
+        description: contains address information       
