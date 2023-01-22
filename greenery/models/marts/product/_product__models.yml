@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: fact table about the performance of our products.
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: dimensional table for our products, right now a copy of stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_users
+    description: dimensional table for our user data with addresses as well as some main kpis on user level
+    columns: 
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_orders
+    description: our orders table, showing all orders with relevant info, right now a copy of stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null

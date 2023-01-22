@@ -7,9 +7,6 @@ models:
       - name: name
         tests:
           - not_null
-      - name: height
-        tests:
-          - positive_values
+      - name: height    
       - name: weight
-        tests:
-          - positive_values
+

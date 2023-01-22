@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_user_orders
+    description: order info on user level to find out order behaviour per user
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique

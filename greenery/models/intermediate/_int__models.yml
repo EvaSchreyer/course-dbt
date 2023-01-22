@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_order_intel_per_user
+    description: for each user that placed at least one order, we find here count of overall orders and sum of all orders
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_product_page_views
+    description: combines the staging tables stg_products and stg_events on product_id
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_users
+    description: a combination of the staging tables stg_users and stg_addresses on user_id
+    columns:
+      - name: user_id
+        tests: 
+          - not_null
+          - unique
