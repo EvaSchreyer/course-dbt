@@ -30,3 +30,5 @@ when the user last purchased. As we have only one month of data its difficult to
 Indicators of users that are likely not to buy again are if this usual buying pattern breaks - e.g if they usually 
 buy 2 items a month and then they stop buying for 3 months, its quite likely that they will not buy again.
 
+3) Tests
+Except the basic tests like unique and not_null I have not added additional tests, mainly due to timing :( 
