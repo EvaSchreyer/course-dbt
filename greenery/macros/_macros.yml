@@ -1,0 +1,15 @@
+version: 2
+
+macros:
+  - name: lbs_to_kgs
+    description: macro to convert lbt to kgs.
+
+  - name: macro_grouped_event_types
+    description: helps to group event types into more meaningful groups
+
+  - name: test_positive_values
+    description: a test for positive values in certain columns
+
+  - name: test_session_logic
+    description: tests if one column is > than another
+

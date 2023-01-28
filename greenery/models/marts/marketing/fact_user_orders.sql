@@ -1,4 +1,10 @@
 
+{{
+  config(
+    materialized='table'
+  )
+}}
+
 with user_table as (
     select distinct
         user_id

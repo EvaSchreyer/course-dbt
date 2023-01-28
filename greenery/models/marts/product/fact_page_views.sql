@@ -1,4 +1,10 @@
 
+{{
+  config(
+    materialized='table'
+  )
+}}
+
 select distinct
     product_id
     , name

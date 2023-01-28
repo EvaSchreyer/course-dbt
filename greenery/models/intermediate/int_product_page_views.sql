@@ -17,14 +17,7 @@ product_table as (
 
 events_table as (
     SELECT
-        event_id,
-        session_id,
-        user_id,
-        event_type,
-        page_url,
-        created_at,
-        order_id,
-        product_id
+        {{ dbt_utils.star(from=ref('stg_events'), except=[page_url]) }}
     from {{ ref('stg_events')}}
 )
 

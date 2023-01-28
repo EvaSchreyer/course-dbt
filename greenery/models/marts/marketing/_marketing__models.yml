@@ -8,3 +8,31 @@ models:
         tests:
           - not_null
           - unique
+  
+  - name: fact_product_conversion
+    description: conversion info for each product. With the columns the conversion rate can be built
+    tests:
+      - session_logic:
+          column_name1: cnt_product_purchase_sessions
+          column_name2: cnt_product_views
+    columns:
+      - name: product_id
+        tests: 
+          - not_null
+          - unique
+      - name: cnt_product_views
+        tests:
+          - positive_values
+      - name: cnt_product_purchase_sessions
+        tests:
+          - positive_values
+  
+  - name: fact_overall_conversion
+    description: conversion info overall per date (day)
+    columns:
+      - name: date
+        tests:
+          - not_null
+      - name: cnt_sessions
+        tests:
+          - positive_values
