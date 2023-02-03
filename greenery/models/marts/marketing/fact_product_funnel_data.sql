@@ -12,10 +12,18 @@ with product_info_table as (
     from {{ ref('dim_products')}}    
 ),
 
+order_item_table as (
+    select 
+        product_id,
+        order_id
+    from {{ ref('stg_order_items')}}
+),
+
 event_table as (
     select 
-        user_id, session_id, event_type, coalesce(product_id, order_id) as product_id, date(created_at) as date
-    from {{ ref('stg_events')}} 
+        user_id, session_id, event_type, coalesce(e.product_id, oi.product_id) as product_id, date(created_at) as date
+    from {{ ref('stg_events')}} e
+    inner join order_item_table oi using(product_id)
 )
 select
     product_id, 

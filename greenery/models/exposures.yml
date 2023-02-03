@@ -1,0 +1,13 @@
+version: 2
+
+exposures:  
+  - name: Product Funnel Dashboard
+    description: >
+      builds the product funnel 
+    type: dashboard
+    maturity: high
+    owner:
+      name: Eva Schreyer
+      email: eva@greenery.com
+    depends_on:
+      - ref('fact_product_funnel_data')

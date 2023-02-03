@@ -18,7 +18,7 @@ To be able to not only see our product funnel overall but also by certain dates 
 - page_view yes/no
 - add_to_cart yes/no
 - checkout_yes/no
-for that I create a new table **fact_product_funnel_data** within the marketing folder
+for that I create a new table **fact_product_funnel_data** within the marketing folder with some tests for logic
 
 
 

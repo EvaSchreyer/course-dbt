@@ -39,8 +39,12 @@ models:
 
   - name: fact_product_funnel_data
     description: gives you all relevant data to build your product funnel
+    tests:
     columns: 
       - name: product_id
         tests:
+          - not_null
+      - name: product_name
+        tests: 
           - not_null
 
