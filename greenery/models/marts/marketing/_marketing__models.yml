@@ -36,3 +36,11 @@ models:
       - name: cnt_sessions
         tests:
           - positive_values
+
+  - name: fact_product_funnel_data
+    description: gives you all relevant data to build your product funnel
+    columns: 
+      - name: product_id
+        tests:
+          - not_null
+
