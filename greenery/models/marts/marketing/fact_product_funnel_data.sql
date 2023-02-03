@@ -13,7 +13,7 @@ with product_info_table as (
 ),
 
 order_item_table as (
-    select 
+    select distinct 
         product_id,
         order_id
     from {{ ref('stg_order_items')}}
@@ -23,7 +23,7 @@ event_table as (
     select 
         user_id, session_id, event_type, coalesce(e.product_id, oi.product_id) as product_id, date(created_at) as date
     from {{ ref('stg_events')}} e
-    inner join order_item_table oi using(product_id)
+    inner join order_item_table oi using(order_id)
 )
 select
     product_id, 
