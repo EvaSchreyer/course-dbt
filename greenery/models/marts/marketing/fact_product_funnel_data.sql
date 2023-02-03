@@ -22,10 +22,11 @@ select
     name as product_name, 
     session_id, 
     user_id,
+    date, 
     count_if(event_type = 'page_view') as page_view,
     count_if(event_type = 'add_to_cart') as add_to_cart,
     count_if(event_type = 'checkout') as checkout
     from event_table
     inner join product_info_table using(product_id)
-group by 1,2,3,4
+group by 1,2,3,4,5
 order by 1
